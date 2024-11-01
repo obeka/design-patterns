@@ -213,7 +213,7 @@ const HexagonWithSquare = () => {
 	};
 
 	return (
-		<div className='bg-gray-800 p-6  text-white h-full'>
+		<div className='bg-gray-800 p-6 mb-[300px]  text-white h-full'>
 			<h2 className='text-center text-2xl font-bold mb-6'>
 				Interactive Shapes: Hexagon and Square
 			</h2>
