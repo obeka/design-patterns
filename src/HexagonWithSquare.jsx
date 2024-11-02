@@ -213,7 +213,7 @@ const HexagonWithSquare = () => {
 	};
 
 	return (
-		<div className='bg-gray-800 p-6 mb-[300px]  text-white h-full'>
+		<div className='bg-gray-800 p-6  text-white '>
 			<h2 className='text-center text-2xl font-bold mb-6'>
 				Interactive Shapes: Hexagon and Square
 			</h2>
@@ -273,8 +273,8 @@ const HexagonWithSquare = () => {
 			</div>
 
 			{/* SVG Shapes Container */}
-			<div className='overflow-y-scroll h-[calc(100vh-250px)]'>
-				<div className='flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-6'>
+			<div className='overflow-y-auto	h-full '>
+				<div className='flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-6 mb-40'>
 					{/* SVG Hexagon */}
 					<svg
 						className='w-[80vw] md:w-[30vw] max-w-[400px] h-auto'
