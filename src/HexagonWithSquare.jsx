@@ -213,28 +213,29 @@ const HexagonWithSquare = () => {
 	};
 
 	return (
-		<div className='bg-gray-800 p-6  text-white '>
+		<div className='bg-gray-800 p-6 text-white'>
 			<h2 className='text-center text-2xl font-bold mb-6'>
 				Interactive Shapes: Hexagon and Square
 			</h2>
 
 			{/* Theme Selection and Color Picker Containers */}
-			<div className='sticky top-0 bg-gray-800 z-10 p-4 mb-6'>
+			<div className='sticky top-0 bg-gray-800 z-10 p-4 mb-4'>
 				<div className='flex flex-col md:flex-row justify-between space-y-4 md:space-y-0'>
 					<div className='flex-1 md:mr-4'>
 						<h3 className='text-lg font-semibold mb-2'>Select a Theme:</h3>
 						<div className='flex flex-wrap'>
-							{Object.keys(themes).map((theme) => (
-								<button
-									key={theme}
-									onClick={() => applyTheme(theme)}
-									className='bg-blue-600 hover:bg-blue-500 text-white py-1 px-2 m-1 rounded'
-								>
-									{theme.replace("_", " ").charAt(0).toUpperCase() +
-										theme.replace("_", " ").slice(1)}{" "}
-									Style
-								</button>
-							))}
+							{Object.keys(themes)
+								.slice(0, 4)
+								.map((theme) => (
+									<button
+										key={theme}
+										onClick={() => applyTheme(theme)}
+										className='bg-blue-600 hover:bg-blue-500 text-white py-1 px-2 m-1 rounded text-sm md:text-base'
+									>
+										{theme.replace("_", " ").charAt(0).toUpperCase() +
+											theme.replace("_", " ").slice(1)}
+									</button>
+								))}
 						</div>
 					</div>
 
@@ -273,8 +274,8 @@ const HexagonWithSquare = () => {
 			</div>
 
 			{/* SVG Shapes Container */}
-			<div className='overflow-y-auto	h-full '>
-				<div className='flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-6 mb-40'>
+			<div className='overflow-y-auto h-[calc(100vh-250px)]'>
+				<div className='flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-6 mb-20'>
 					{/* SVG Hexagon */}
 					<svg
 						className='w-[80vw] md:w-[30vw] max-w-[400px] h-auto'
@@ -297,9 +298,11 @@ const HexagonWithSquare = () => {
 									onClick={() => handleHexagonTriangleClick(index)}
 									style={{ cursor: "pointer" }}
 									stroke={
-										selectedHexagonTriangles.includes(index) ? "yellow" : "none"
+										selectedHexagonTriangles.includes(index)
+											? "yellow"
+											: "black"
 									}
-									strokeWidth={selectedHexagonTriangles.includes(index) ? 5 : 0}
+									strokeWidth={selectedHexagonTriangles.includes(index) ? 5 : 1}
 								/>
 							))}
 						</g>
@@ -322,8 +325,8 @@ const HexagonWithSquare = () => {
 									fill={color}
 									onClick={() => handleSquareClick(index)}
 									style={{ cursor: "pointer" }}
-									stroke={selectedSquares.includes(index) ? "yellow" : "none"}
-									strokeWidth={selectedSquares.includes(index) ? 3 : 0}
+									stroke={selectedSquares.includes(index) ? "yellow" : "black"}
+									strokeWidth={selectedSquares.includes(index) ? 3 : 1}
 								/>
 							))}
 						</g>
